@@ -1,0 +1,34 @@
+[application]
+
+config/icon = "res://icon.png"
+config/name = "Isometric grid-based movement"
+run/main_scene = "res://Game.tscn"
+
+[display]
+
+window/size/fullscreen = false
+window/size/height = 720
+window/size/resizable = true
+window/size/width = 1280
+window/stretch/mode = "2d"
+
+[importer_defaults]
+
+texture = {
+"flags/filter": true,
+"flags/mipmaps": true
+}
+
+[input]
+
+debug = [ InputEvent(KEY,80) ]
+move_down = [ InputEvent(KEY,83), InputEvent(KEY,16777234), InputEvent(JAXIS,1,1) ]
+move_left = [ InputEvent(KEY,65), InputEvent(KEY,16777231), InputEvent(JAXIS,0,-1) ]
+move_right = [ InputEvent(KEY,68), InputEvent(KEY,16777233), InputEvent(JAXIS,0,1) ]
+move_up = [ InputEvent(KEY,87), InputEvent(KEY,16777232), InputEvent(JAXIS,1,-1) ]
+pause = [ InputEvent(KEY,32), InputEvent(JBUTTON,11) ]
+
+[rendering]
+
+quality/2d/use_pixel_snap = true
+
