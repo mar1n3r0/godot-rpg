@@ -46,11 +46,12 @@ func _physics_process(delta):  #-- NOTE: Automatically converted by Godot 2 to 3
 	elif Input.is_mouse_button_pressed(1):
 		#direction = get_viewport().get_mouse_position()
 		direction = get_local_mouse_position()
+		# compensate for isometric height offset to allow diagonal movement and correct vertical
+		direction = direction - grid.tile_offset
 		direction.x = int(round(direction.x))/64
 		direction.y = int(round(direction.y))/32
 		print(direction)
 	if not is_moving and direction != Vector2():
-		#print(direction)
 		target_direction = direction.normalized()
 		if grid.is_cell_vacant(get_position(), direction):  #-- NOTE: Automatically converted by Godot 2 to 3 converter, please review
 			target_pos = grid.update_child_position(get_position(), direction, type)  #-- NOTE: Automatically converted by Godot 2 to 3 converter, please review
